@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>canvas{
+               border: 1px black solid;
+               display:block;
+            }
+               button{
+                   margin-left: auto;
+                   margin-right:auto;
+               }
+               div{
+                   width: 400px; 
+                   height:400px;
+                   text-align:center;
+               }
+        </style>
+    </head>
+   
+    <body>
+        <div>
+            <canvas id="vaszon" width="400" height="400">
+            </canvas>
+             <button id="gomb">Még 100 lövés</button>
+        </div>
+    </body>
+    <script>
+        var gomb=document.getElementById("gomb");
+        var c=document.getElementById("vaszon");
+        var sugar=c.width/2;
+        var kozeppontX=c.width/2;
+        var kozeppontY=c.height/2;
+        var rajzlap=c.getContext("2d");
+        gomb.addEventListener("click",()=>{
+            for(var loves=1;loves<=100;loves++){
+                var x=Math.floor(Math.random()*c.width);
+                var y=Math.floor(Math.random()*c.height);
+                if(tavolsag(x,y)<=sugar){
+                    rajzlap.fillStyle="red";
+                    rajzlap.fillRect(x,y,1,1);
+                }
+            }
+        });
+        var tavolsag=function(x,y){
+            return Math.sqrt(Math.pow((kozeppontX-x),2)+Math.pow((kozeppontY-y),2));
+        }
+        var varakozas=Math.floor(Math.random()*900+100);
+        window.setInterval(()=>{
+            for(var loves=1;loves<=1000;loves++){
+                var x=Math.floor(Math.random()*c.width);
+                var y=Math.floor(Math.random()*c.height);
+                if(tavolsag(x,y)<=sugar){
+                    rajzlap.fillStyle="red";
+                    rajzlap.fillRect(x,y,1,1);
+        }
+    </script>
+</html>

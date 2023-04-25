@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+           div{
+                margin-left: auto;
+                margin-right: auto;
+                width: 300;
+                height: 150;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div><canvas id="c1"></canvas></div>
+    </body>
+    <script>
+        var c=document.getElementById("c1");
+        var rajzlap=c.getContext("2d");
+        //rajzlap.fillStyle="#00FF00";
+        rajzlap.fillStyle="rgba(0,255,0,.3)";
+        rajzlap.fillRect(0,0,300,150);    
+        rajzlap.moveTo(0,0);
+        rajzlap.lineTo(300,150);
+        rajzlap.strokeStyle="red";
+        rajzlap.stroke();
+        rajzlap.closePath();
+        rajzlap.beginPath();
+        rajzlap.moveTo(300,0);
+        rajzlap.lineTo(0,150);
+        rajzlap.strokeStyle="blue";
+        rajzlap.stroke();
+        rajzlap.closePath();
+       
+        
+    </script>
+</html>

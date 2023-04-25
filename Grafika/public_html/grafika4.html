@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var koordinatarendszer=document.createElement("canvas");
+            koordinatarendszer.width=400;
+            koordinatarendszer.height=400;
+            document.body.appendChild(koordinatarendszer);
+            var rajzlapok=document.querySelector("canvas");
+            var rajzlap=rajzlapok.getContext("2d");
+            rajzlap.beginPath();
+            for(var x=0;x<=rajzlapok.width;x+=50){
+                rajzlap.moveTo(x,0);
+                rajzlap.lineTo(x,rajzlapok.height);
+            }
+            for(var y=0;y<=rajzlapok.height;y+=50){
+                rajzlap.moveTo(0,y);
+                rajzlap.lineTo(rajzlapok.width,y);
+                }
+                
+            rajzlap.stroke();
+            for(var db=1;db<=4;db++){
+            var x=Math.floor(Math.random()*393);
+            var y=Math.floor(Math.random()*393);
+            rajzlap.fillStyle="red";
+            rajzlap.fillRect(x,y,7,7);
+            if(db==1){
+                var elsoX=x;
+                var elsoY=y;
+                var elozoX=x;
+                var elozoY=y;
+            }else{
+                rajzlap.moveTo(elozoX+3,elozoY+3);
+                rajzlap.lineTo(x+3,y+3);
+                rajzlap.strokeStyle="rgb(255,0,255)";
+                rajzlap.stroke();
+            elozoX=x;
+            elozoY=y;
+            if(db==4){
+                    rajzlap.moveTo(elozoX+3,elozoY+3);
+                    rajzlap.lineTo(elsoX+3,elsoY+3);
+                    rajzlap.strokeStyle="rgb(255,0,255)";
+                    rajzlap.stroke();
+            }
+            
+            }
+        }
+            //console.log(rajzlapok);
+        </script>
+    </body>
+</html>
+kiscica

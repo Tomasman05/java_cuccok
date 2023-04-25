@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            canvas{
+                width: 400px;
+                height:400px;
+                
+            }
+            div{
+              
+                width: 400px;
+                height:400px;
+                margin: auto;
+                margin: auto;
+                background-color: aquamarine;
+            }
+        </style>
+    </head>
+    <body onclick="vonalazas();" onkeypress="vonalazas();">
+        <div><canvas id="c1" width="500" height="500"></canvas></div>
+    </body>
+    <script>
+        var c=document.getElementById("c1");
+        var rajzlap=c.getContext("2d");
+        function vonalazas(){
+            for(var x=0;x<=c.width;x+=50){
+                rajzlap.moveTo(x,0);
+                rajzlap.lineTo(x,c.height);
+            }
+            for(var y=0;y<=c.height;y+=50){
+                rajzlap.moveTo(0,y);
+                rajzlap.lineTo(c.width,y);
+                }
+            rajzlap.stroke();
+        }
+        function satirozas() {
+            for(var x=1;x<50;x++) {
+                rajzlap.beginPath();
+                rajzlap.moveTo();
+            }
+        }
+    </script>
+</html>
